@@ -1,0 +1,35 @@
+.main-wrapper {
+    height: 60rem;
+    width: 40rem;
+    border-radius: 10px;
+    display: grid;
+
+    grid-template-rows: 10% 25% auto auto auto;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+        "logo    logo    logo    logo    logo"
+        "display display display display display"
+        "buttons buttons buttons buttons buttons"
+        "buttons buttons buttons buttons buttons"
+        "buttons buttons buttons buttons buttons";
+}
+
+.logo {
+    grid-area: logo;
+    background-color: var(--color-primary-btn-bg);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.screen {
+    grid-area: display;
+    background-color: var(--color-bg-white);
+}
+
+.buttons {
+    grid-area: buttons;
+    background-color: var(--color-bg-btn);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}

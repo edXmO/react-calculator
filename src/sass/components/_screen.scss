@@ -1,0 +1,16 @@
+.screen {
+    font-size: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &__currOperation {
+        margin: 2rem 1rem;
+        font-size: 3rem;
+        color: var(--color-primary);
+        align-self: flex-start;
+    }
+    &__display {
+        margin: 2rem 1rem;
+        align-self: flex-end;
+    }
+}

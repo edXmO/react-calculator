@@ -1,0 +1,31 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    font-weight: 300;
+    box-sizing: border-box;
+    // Centering of calc
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #9c886d; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #9c886d, #b0b0b0); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #9c886d,
+        #b0b0b0
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
