@@ -13,6 +13,8 @@ import {
     EQUALS
 } from './types';
 
+import helper from '../models/helpers';
+
 // Interactions actions
 
 export const clear_screen = () => {
@@ -48,38 +50,44 @@ export const lastKey_pressed = (key, type) => {
     }
 }
 
-export const equals = () => {
+export const equals = (history) => {
+    const result = eval(history);
     return {
-        type: EQUALS
+        type: EQUALS,
+        payload: result.toFixed(2)
     }
 }
 
 // Operator actions
 
-
-export const add = () => {
+export const add = (history) => {
+    const result = history.concat('+');
     return {
-        type: ADD
+        type: ADD,
+        payload: result
     }
 }
 
-export const subtract = (num) => {
+export const subtract = (history) => {
+    const result = history.concat('-');
     return {
         type: SUBTRACT,
-        payload: num
+        payload: result
     }
 }
 
-export const multiply = (num) => {
+export const multiply = (history) => {
+    const result = history.concat('*');
     return {
         type: MULTIPLY,
-        payload: num
+        payload: result
     }
 }
-export const divide = (num) => {
+export const divide = (history) => {
+    const result = history.concat('/');
     return {
         type: DIVIDE,
-        payload: num
+        payload: result
     }
 }
 export const exponential = (num) => {

@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-    screen: '', key: '', type: ''
+    screen: '', lastKey: '', lastType: '', result: ''
 }
 
 export default INITIAL_STATE;

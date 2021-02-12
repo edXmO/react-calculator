@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 // Styles
 import '../../../styles/App.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,13 +7,12 @@ import { clear_screen, del, lastKey_pressed, decimal, equals } from '../../../ac
 
 const Button = ({ type, btn, operatorStyle }) => {
 
-    const currDisplay = useSelector(({ interact }) => interact.screen);
-    const lastType = useSelector(({ interact }) => interact.type);
+    const currDisplay = useSelector(({ calculator }) => calculator.screen);
+    const lastType = useSelector(({ calculator }) => calculator.type);
     const dispatch = useDispatch();
 
     const handleBtnClick = (btn, type) => {
         if (type === 'Display') {
-            console.log(btn, type);
             if (btn === '.') {
                 if (currDisplay.includes('.') || currDisplay[-1] === '.') return;
                 return dispatch(decimal(currDisplay));
@@ -25,7 +24,8 @@ const Button = ({ type, btn, operatorStyle }) => {
             switch (btn) {
                 case '+':
                     console.log('add');
-                    return dispatch(lastKey_pressed(btn, type));
+                    dispatch(lastKey_pressed(btn, type));
+                    return
                 case '-':
                     console.log('subtract');
                     return dispatch(lastKey_pressed(btn, type));
@@ -48,12 +48,12 @@ const Button = ({ type, btn, operatorStyle }) => {
                 case 'Clear':
                     console.log('Clearing screen');
                     return dispatch(clear_screen());
-                case '<=':
+                case 'DEL':
                     console.log('delete last key pressed');
                     return dispatch(del(currDisplay));
                 case '=':
                     console.log('equals pressed');
-                    return dispatch(equals());
+                    return dispatch(equals(currDisplay));
             }
         }
     }

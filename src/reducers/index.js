@@ -1,9 +1,7 @@
 import { combineReducers } from 'redux';
 // Reducers
-import interactionReducer from './interactionReducer';
-import operatorReducer from './operatorReducer';
+import calcReducer from './calcReducer';
 
 export default combineReducers({
-    interact: interactionReducer,
-    operate: operatorReducer
+    calculator: calcReducer
 });

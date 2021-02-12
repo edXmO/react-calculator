@@ -1,3 +1,8 @@
-export default helpers = {
-    'Helper functions': 'in progress'
+const helper = {
+    stringToInt(val) {
+        return parseInt(val);
+    }
 }
+
+
+export default helper;

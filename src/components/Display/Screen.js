@@ -6,9 +6,9 @@ import { display_screen } from '../../actions';
 import '../../styles/App.css';
 
 const Screen = () => {
-    const result = 0;
-    const lastKeyPressed = useSelector(({ interact }) => interact.key);
-    const currNumberDisplayed = useSelector(({ interact }) => interact.screen);
+    const result = useSelector(({ calculator }) => calculator.result);
+    const lastKeyPressed = useSelector(({ calculator }) => calculator.lastKey);
+    const currNumberDisplayed = useSelector(({ calculator }) => calculator.screen);
 
     const dispatch = useDispatch();
 
