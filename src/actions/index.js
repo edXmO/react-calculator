@@ -34,32 +34,32 @@ export const decimal = currentDisplay => {
         payload: updatedDisplay
     }
 }
-export const display_screen = (currDisplay, keyPressed) => {
-    const updatedDisplay = currDisplay + keyPressed;
+export const display_screen = (currentDisplay, keyPressed) => {
+    const updatedDisplay = currentDisplay + keyPressed;
     return {
         type: DISPLAY_SCREEN,
-        payload: { updatedDisplay }
+        payload: updatedDisplay
     }
 }
-export const lastKey_pressed = key => {
+export const lastKey_pressed = (key, type) => {
     return {
         type: KEYNUMBER_PRESS,
-        payload: key
+        payload: { key, type }
     }
 }
 
-// Operator actions
 export const equals = () => {
-    console.log('equals');
     return {
         type: EQUALS
     }
 }
 
-export const add = (num) => {
+// Operator actions
+
+
+export const add = () => {
     return {
-        type: ADD,
-        payload: num
+        type: ADD
     }
 }
 
