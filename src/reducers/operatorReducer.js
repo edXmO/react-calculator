@@ -1,8 +1,8 @@
 import {
-    ADD, SUBTRACT, DIVIDE, MULTIPLY, MOD, EXP
+    ADD, SUBTRACT, DIVIDE, MULTIPLY, MOD, EXP, EQUALS
 } from '../actions/types';
 
-const INITIAL_STATE = {};
+const INITIAL_STATE = { result: '0' };
 
 const operatorReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
@@ -18,6 +18,8 @@ const operatorReducer = (state = INITIAL_STATE, action) => {
             console.log('Adding operation');
         case EXP:
             console.log('Adding operation');
+        case EQUALS:
+            return { ...state, result: action.payload }
         default:
             return state;
     }

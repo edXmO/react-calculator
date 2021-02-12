@@ -9,7 +9,8 @@ import {
     DELETE,
     DECIMAL,
     DISPLAY_SCREEN,
-    KEYNUMBER_PRESS
+    KEYNUMBER_PRESS,
+    EQUALS
 } from './types';
 
 // Interactions actions
@@ -19,28 +20,41 @@ export const clear_screen = () => {
         type: CLEAR_SCREEN
     }
 }
-export const del = () => {
+export const del = currentDisplay => {
+    const updatedDisplay = currentDisplay.slice(0, currentDisplay.length - 1);
     return {
-        type: DELETE
+        type: DELETE,
+        payload: updatedDisplay
     }
 }
-export const decimal = () => {
+export const decimal = currentDisplay => {
+    const updatedDisplay = currentDisplay + '.';
     return {
-        type: DECIMAL
+        type: DECIMAL,
+        payload: updatedDisplay
     }
 }
-export const display_screen = () => {
+export const display_screen = (currDisplay, keyPressed) => {
+    const updatedDisplay = currDisplay + keyPressed;
     return {
-        type: DISPLAY_SCREEN
+        type: DISPLAY_SCREEN,
+        payload: { updatedDisplay }
     }
 }
-export const key_press = (key) => {
+export const lastKey_pressed = key => {
     return {
-        type: KEYNUMBER_PRESS
+        type: KEYNUMBER_PRESS,
+        payload: key
     }
 }
 
 // Operator actions
+export const equals = () => {
+    console.log('equals');
+    return {
+        type: EQUALS
+    }
+}
 
 export const add = (num) => {
     return {

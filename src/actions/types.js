@@ -5,6 +5,7 @@ export const MULTIPLY = 'MULTIPLY';
 export const DIVIDE = 'DIVIDE';
 export const EXP = 'EXP';
 export const MOD = 'MOD';
+export const EQUALS = 'EQUALS';
 
 // Interactions
 export const CLEAR_SCREEN = 'CLEAR_SCREEN';

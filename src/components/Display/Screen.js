@@ -1,30 +1,33 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { display_screen } from '../../actions';
-
-
 
 // Styles 
 import '../../styles/App.css';
 
 const Screen = () => {
+    const result = 0;
+    // const operationHistory = useSelector(({ interact }) => interact.operationHistory);
+    const lastKeyPressed = useSelector(({ interact }) => interact.key);
+    const currNumberDisplayed = useSelector(({ interact }) => interact.screen);
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        display_screen();
-    }, []);
+        dispatch(display_screen(currNumberDisplayed, lastKeyPressed));
+    }, [lastKeyPressed]);
 
     return (
         <div className='screen'>
-            <p className='screen__currOperation'>0</p>
-            <p className='screen__display'>0</p>
+            <p className='screen__currOperation'>
+                {currNumberDisplayed}
+
+            </p>
+            <p className='screen__display'>
+                {result}
+            </p>
         </div>
     )
 }
 
-const mapStateToProps = ({ interact }) => {
-    return { interact: interact.screen }
-}
-
-export default connect(mapStateToProps, {
-    display_screen
-})(Screen);
+export default Screen;

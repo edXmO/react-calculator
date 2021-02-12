@@ -9,11 +9,11 @@ import '../../styles/App.css';
 const Buttons = ({ symbols }) => {
     const renderBtn = symbols.map(symbol => {
         const { key, type } = symbol;
-        if (type === 'Operator') {
-            return <Button key={key} btn={key} operatorStyle={'btn--operator'} />
+        if (type === 'Action') {
+            return <Button key={key} btn={key} type={type} operatorStyle={'btn--operator'} />
         }
-        if (type === 'Number') {
-            return <Button key={key} btn={key} />
+        if (type === 'Display') {
+            return <Button key={key} btn={key} type={type} />
         }
 
     })
