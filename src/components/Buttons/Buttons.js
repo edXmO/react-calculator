@@ -6,14 +6,14 @@ import Button from './Button/Button';
 // Styles 
 import '../../styles/App.css';
 
-const Buttons = ({ onBtnClick, symbols }) => {
+const Buttons = ({ symbols }) => {
     const renderBtn = symbols.map(symbol => {
-        const { key, type, action } = symbol;
+        const { key, type } = symbol;
         if (type === 'Operator') {
-            return <Button key={key} btn={key} operatorStyle={'btn--operator'} onBtnClick={onBtnClick} action={action} />
+            return <Button key={key} btn={key} operatorStyle={'btn--operator'} />
         }
         if (type === 'Number') {
-            return <Button key={key} btn={key} onBtnClick={onBtnClick} />
+            return <Button key={key} btn={key} />
         }
 
     })
@@ -26,3 +26,7 @@ const Buttons = ({ onBtnClick, symbols }) => {
 }
 
 export default Buttons;
+
+
+// Button component props
+// onBtnClick={onBtnClick} action={action} 

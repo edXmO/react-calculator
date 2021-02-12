@@ -2,15 +2,9 @@ import React from 'react';
 // Styles
 import '../../../styles/App.css';
 
-const Button = ({ onBtnClick, btn, action, operatorStyle }) => {
-
-    const handleBtnClick = () => {
-        onBtnClick(btn, action);
-    }
-
+const Button = ({ btn, operatorStyle }) => {
     return (
         <button
-            onClick={() => handleBtnClick()}
             className={`btn ${operatorStyle ? 'btn--operator' : 'btn--number'}`}>
             {btn}
         </button >
@@ -18,3 +12,11 @@ const Button = ({ onBtnClick, btn, action, operatorStyle }) => {
 }
 
 export default Button;
+
+
+// const handleBtnClick = () => {
+    //     onBtnClick(btn, action);
+    // }
+
+// button props 
+// onClick={() => handleBtnClick()}
