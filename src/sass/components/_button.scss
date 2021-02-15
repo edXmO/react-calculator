@@ -8,6 +8,12 @@
     font-size: 2rem;
     cursor: pointer;
     transition: all 0.3s;
+    &:nth-child(17) {
+        border-bottom-left-radius: 5px;
+    }
+    &:nth-child(20) {
+        border-bottom-right-radius: 5px;
+    }
     &--operator {
         color: var(--color-bg-white);
         background-color: var(--color-primary-btn-special);

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import Copy from './components/Copy/Copy';
 // Redux
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -15,5 +16,6 @@ const store = createStore(
 ReactDOM.render(
     <Provider store={store}>
         <App />
+        <Copy />
     </Provider>,
     document.querySelector('#root'));
