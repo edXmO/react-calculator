@@ -19,6 +19,18 @@
     background-color: var(--color-background-btn);
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    &__name {
+        font-family: var(--font-logo);
+        color: var(--color-btn-text);
+    }
+    &__version {
+        font-family: var(--font-logo);
+        font-size: 1.2rem;
+        color: var(--color-btn-text);
+    }
 }
 
 .screen {
@@ -46,8 +58,9 @@
 
     &__text {
         margin: 1rem 0;
-        font-family: "Open Sans", sans-serif;
+        font-family: var(--font-logo);
         font-style: italic;
-        font-size: 1.7rem;
+        font-size: 1.6rem;
+        letter-spacing: 0.3rem;
     }
 }

@@ -20,8 +20,7 @@ const Button = ({ type, btn, operatorStyle }) => {
                 if (currDisplay.includes('.') || currDisplay[-1] === '.') return;
                 return dispatch(decimal(currDisplay));
             }
-            console.log('number', btn, 'pressed');
-            dispatch(lastKey_pressed(btn, type));
+            return dispatch(lastKey_pressed(btn, type));
         }
         if (type === 'Command') {
             switch (btn) {
@@ -30,11 +29,11 @@ const Button = ({ type, btn, operatorStyle }) => {
                 case 'del':
                     return dispatch(del(currDisplay));
                 case '=':
-                    let newOperation = lastResult + currDisplay;
+                    const newOperation = lastResult + currDisplay;
                     return dispatch(equals(newOperation));
             }
         }
-        if (type === 'Action' && lastType !== type) {
+        if (type === 'Action' && lastType !== 'Action') {
             switch (btn) {
                 case '+':
                     dispatch(addOperator(currDisplay, '+', ADD, type));

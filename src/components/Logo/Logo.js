@@ -6,7 +6,8 @@ import '../../styles/App.css';
 const Logo = () => {
     return (
         <div className='logo' >
-            Logo
+            <h1 className='logo__name'>CASIO</h1>
+            <p className='logo__version'>fx-82MS</p>
         </div>
     )
 }

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
 .main-wrapper {
   height: 50rem;
   width: 30rem;
@@ -12,7 +13,17 @@
   grid-area: logo;
   background-color: var(--color-background-btn);
   border-top-left-radius: 6px;
-  border-top-right-radius: 6px; }
+  border-top-right-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+  .logo__name {
+    font-family: var(--font-logo);
+    color: var(--color-btn-text); }
+  .logo__version {
+    font-family: var(--font-logo);
+    font-size: 1.2rem;
+    color: var(--color-btn-text); }
 
 .screen {
   grid-area: display;
@@ -34,9 +45,10 @@
     height: 4.5rem; }
   .copy__text {
     margin: 1rem 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: var(--font-logo);
     font-style: italic;
-    font-size: 1.7rem; }
+    font-size: 1.6rem;
+    letter-spacing: 0.3rem; }
 
 .buttons {
   border-radius: 5px; }
@@ -51,7 +63,8 @@
   --color-btns: #2d3749;
   --color-num-screen: #888c91;
   --color-bg-screen: #282e38;
-  --color-btn-text: #dfe0e1; }
+  --color-btn-text: #dfe0e1;
+  --font-logo: "Orbitron", sans-serif; }
 
 *,
 *::before,
