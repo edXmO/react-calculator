@@ -5,7 +5,7 @@
 
 ## [Live Demo](https://edxmo.github.io/react-calculator/index.html)
 
-
+[![Build Status](https://travis-ci.com/edXmO/react-calculator.svg?branch=main)](https://travis-ci.com/edXmO/react-calculator)
 [![GitHub issues](https://img.shields.io/github/issues/edXmO/react-calculator)](https://github.com/edXmO/react-calculator/issues)
 [![GitHub forks](https://img.shields.io/github/forks/edXmO/react-calculator)](https://github.com/edXmO/react-calculator/network)
 
