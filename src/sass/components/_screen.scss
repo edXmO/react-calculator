@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: var(--color-bg-screen);
     &__currOperation {
         margin: 2rem 1rem;
         font-size: 3rem;
@@ -10,6 +11,7 @@
         align-self: flex-start;
     }
     &__display {
+        color: var(--color-bg-white);
         margin: 2rem 1rem;
         align-self: flex-end;
     }

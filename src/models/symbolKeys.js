@@ -17,7 +17,7 @@ const SYMBOLS = [
     { 'key': '%', 'type': 'Action' },
     { 'key': '0', 'type': 'Display' },
     { 'key': '.', 'type': 'Display' },
-    { 'key': 'DEL', 'type': 'Command' },
+    { 'key': 'del', 'type': 'Command' },
     { 'key': '=', 'type': 'Command' }
 ];
 

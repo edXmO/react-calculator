@@ -3,7 +3,9 @@ import React from 'react';
 import '../../../styles/App.css';
 import { useDispatch, useSelector } from 'react-redux';
 // Actions
-import { clear_screen, del, lastKey_pressed, decimal, equals } from '../../../actions';
+import { clear_screen, del, lastKey_pressed, decimal, equals, addOperator } from '../../../actions';
+// Types
+import { ADD, SUBTRACT, DIVIDE, MULTIPLY, MOD, EXP } from '../../../actions/types';
 
 const Button = ({ type, btn, operatorStyle }) => {
 
@@ -24,23 +26,28 @@ const Button = ({ type, btn, operatorStyle }) => {
             switch (btn) {
                 case '+':
                     console.log('add');
-                    dispatch(lastKey_pressed(btn, type));
+                    dispatch(addOperator(currDisplay, '+', ADD));
                     return
                 case '-':
                     console.log('subtract');
-                    return dispatch(lastKey_pressed(btn, type));
+                    dispatch(addOperator(currDisplay, '-', SUBTRACT));
+                    return
                 case 'x':
-                    console.log('multiply')
-                    return dispatch(lastKey_pressed(btn, type));
+                    console.log('multiply');
+                    dispatch(addOperator(currDisplay, '*', MULTIPLY));
+                    return
                 case '/':
                     console.log('divide');
-                    return dispatch(lastKey_pressed(btn, type));
+                    dispatch(addOperator(currDisplay, '/', DIVIDE));
+                    return
                 case '%':
                     console.log('mod');
-                    return dispatch(lastKey_pressed(btn, type));
+                    dispatch(addOperator(currDisplay, '%', MOD));
+                    return
                 case 'e':
-                    console.log('exponential');
-                    return dispatch(lastKey_pressed(btn, type));
+                    console.log('add');
+                    dispatch(addOperator(currDisplay, 'e', EXP));
+                    return
             }
         }
         if (type === 'Command') {
@@ -48,7 +55,7 @@ const Button = ({ type, btn, operatorStyle }) => {
                 case 'Clear':
                     console.log('Clearing screen');
                     return dispatch(clear_screen());
-                case 'DEL':
+                case 'del':
                     console.log('delete last key pressed');
                     return dispatch(del(currDisplay));
                 case '=':

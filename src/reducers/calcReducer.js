@@ -13,12 +13,20 @@ const calcReducer = (state = INITIAL_STATE, action) => {
             return { ...state, screen: action.payload }
         case DECIMAL:
             return { ...state, screen: action.payload }
+        case ADD:
+            return { ...state, screen: action.payload }
+        case SUBTRACT:
+            return { ...state, screen: action.payload }
+        case DIVIDE:
+            return { ...state, screen: action.payload }
+        case MULTIPLY:
+            return { ...state, screen: action.payload }
         case MOD:
-            console.log('Adding operation');
+            return { ...state, screen: action.payload }
         case EXP:
-            console.log('Adding operation');
+            return { ...state, screen: action.payload }
         case EQUALS:
-            return { ...state, result: action.payload }
+            return { ...state, result: action.payload.toFixed(2), screen: '' }
         default:
             return state;
     }
