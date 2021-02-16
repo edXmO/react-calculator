@@ -106,6 +106,7 @@ body {
   .btn:nth-child(20) {
     border-bottom-right-radius: 5px; }
   .btn--operator {
+    font-family: var(--font-logo);
     color: var(--color-btn-text);
     background-color: var(--color-primary-btn-special);
     height: 100%;
@@ -119,6 +120,8 @@ body {
         background-color: #b51442;
         box-shadow: inset -1px -3px 8px rgba(128, 16, 47, 0.829), inset -3px -1px 8px rgba(128, 16, 47, 0.833); }
   .btn--number {
+    font-family: var(--font-logo);
+    font-size: 1.8rem;
     color: var(--color-btn-text);
     background-color: var(--color-background-btn);
     border-bottom: 1px solid rgba(255, 255, 255, 0.03);
@@ -133,6 +136,7 @@ body {
         box-shadow: inset -1px -3px 5px rgba(36, 44, 58, 0.514), inset -3px -1px 5px rgba(36, 44, 58, 0.514); }
 
 .screen {
+  font-family: --font-logo;
   font-size: 4.5rem;
   display: flex;
   flex-direction: column;
@@ -144,6 +148,7 @@ body {
     color: var(--color-primary);
     align-self: flex-start; }
   .screen__display {
+    font-family: --font-logo;
     color: var(--color-bg-white);
     margin: 2rem 1rem;
     align-self: flex-end; }

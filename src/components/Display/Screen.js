@@ -6,6 +6,7 @@ import { display_screen } from '../../actions';
 import '../../styles/App.css';
 
 const Screen = () => {
+    const keyHistory = useSelector(({ calculator }) => calculator.keyHistory);
     const result = useSelector(({ calculator }) => calculator.result);
     const lastKeyPressed = useSelector(({ calculator }) => calculator.lastKey);
     const currNumberDisplayed = useSelector(({ calculator }) => calculator.screen);
@@ -13,7 +14,7 @@ const Screen = () => {
 
     useEffect(() => {
         dispatch(display_screen(currNumberDisplayed, lastKeyPressed));
-    }, [lastKeyPressed]);
+    }, [keyHistory]);
 
     return (
         <div className='screen'>

@@ -21,6 +21,7 @@ export const clear_screen = () => {
         type: CLEAR_SCREEN
     }
 }
+
 export const del = currentDisplay => {
     const updatedDisplay = currentDisplay.slice(0, currentDisplay.length - 1);
     return {
@@ -28,6 +29,7 @@ export const del = currentDisplay => {
         payload: updatedDisplay
     }
 }
+
 export const decimal = currentDisplay => {
     const updatedDisplay = currentDisplay + '.';
     return {
@@ -35,6 +37,7 @@ export const decimal = currentDisplay => {
         payload: updatedDisplay
     }
 }
+
 export const display_screen = (currentDisplay, keyPressed) => {
     const updatedDisplay = currentDisplay + keyPressed;
     return {
@@ -42,10 +45,12 @@ export const display_screen = (currentDisplay, keyPressed) => {
         payload: updatedDisplay
     }
 }
-export const lastKey_pressed = (key, type) => {
+
+export const lastKey_pressed = (keyHistory, key, type) => {
+    const updatedKeyHistory = keyHistory + key;
     return {
         type: KEYNUMBER_PRESS,
-        payload: { key, type }
+        payload: { key, type, updatedKeyHistory }
     }
 }
 
@@ -87,6 +92,7 @@ export const multiply = history => {
         payload: result
     }
 }
+
 export const divide = history => {
     const result = history.concat('/');
     return {
@@ -94,12 +100,14 @@ export const divide = history => {
         payload: result
     }
 }
+
 export const exponential = num => {
     return {
         type: EXP,
         payload: num
     }
 }
+
 export const mod = num => {
     return {
         type: MOD,

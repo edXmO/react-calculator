@@ -15,6 +15,7 @@
         border-bottom-right-radius: 5px;
     }
     &--operator {
+        font-family: var(--font-logo);
         color: var(--color-btn-text);
         background-color: var(--color-primary-btn-special);
         height: 100%;
@@ -32,6 +33,8 @@
         }
     }
     &--number {
+        font-family: var(--font-logo);
+        font-size: 1.8rem;
         color: var(--color-btn-text);
         background-color: var(--color-background-btn);
         border-bottom: 1px solid rgba(255, 255, 255, 0.03);

@@ -7,9 +7,9 @@ const calcReducer = (state = INITIAL_STATE, action) => {
         case DISPLAY_SCREEN:
             return { ...state, screen: action.payload }
         case KEYNUMBER_PRESS:
-            return { ...state, lastKey: action.payload.key, lastType: action.payload.type }
+            return { ...state, lastKey: action.payload.key, lastType: action.payload.type, keyHistory: action.payload.updatedKeyHistory }
         case CLEAR_SCREEN:
-            return { ...state, screen: '', lastKey: '', lastType: '', result: '' }
+            return { ...state, screen: '', lastKey: '', lastType: '', result: '', keyHistory: '' }
         case DELETE:
             return { ...state, screen: action.payload }
         case DECIMAL:

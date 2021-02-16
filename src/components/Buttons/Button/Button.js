@@ -12,6 +12,7 @@ const Button = ({ type, btn, operatorStyle }) => {
     const lastResult = useSelector(({ calculator }) => calculator.result);
     const currDisplay = useSelector(({ calculator }) => calculator.screen);
     const lastType = useSelector(({ calculator }) => calculator.lastType);
+    const keyHistory = useSelector(({ calculator }) => calculator.keyHistory);
     const dispatch = useDispatch();
 
     const handleBtnClick = (btn, type, lastType) => {
@@ -20,7 +21,7 @@ const Button = ({ type, btn, operatorStyle }) => {
                 if (currDisplay.includes('.') || currDisplay[-1] === '.') return;
                 return dispatch(decimal(currDisplay));
             }
-            return dispatch(lastKey_pressed(btn, type));
+            return dispatch(lastKey_pressed(keyHistory, btn, type));
         }
         if (type === 'Command') {
             switch (btn) {
