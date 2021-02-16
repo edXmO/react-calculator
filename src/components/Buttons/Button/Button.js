@@ -9,64 +9,57 @@ import { ADD, SUBTRACT, DIVIDE, MULTIPLY, MOD, EXP } from '../../../actions/type
 
 const Button = ({ type, btn, operatorStyle }) => {
 
+    const lastResult = useSelector(({ calculator }) => calculator.result);
     const currDisplay = useSelector(({ calculator }) => calculator.screen);
-    const lastType = useSelector(({ calculator }) => calculator.type);
+    const lastType = useSelector(({ calculator }) => calculator.lastType);
     const dispatch = useDispatch();
 
-    const handleBtnClick = (btn, type) => {
+    const handleBtnClick = (btn, type, lastType) => {
         if (type === 'Display') {
             if (btn === '.') {
                 if (currDisplay.includes('.') || currDisplay[-1] === '.') return;
                 return dispatch(decimal(currDisplay));
             }
+            console.log('number', btn, 'pressed');
             dispatch(lastKey_pressed(btn, type));
-        }
-        if (type === 'Action') {
-            if (lastType === 'Action') return;
-            switch (btn) {
-                case '+':
-                    console.log('add');
-                    dispatch(addOperator(currDisplay, '+', ADD));
-                    return
-                case '-':
-                    console.log('subtract');
-                    dispatch(addOperator(currDisplay, '-', SUBTRACT));
-                    return
-                case 'x':
-                    console.log('multiply');
-                    dispatch(addOperator(currDisplay, '*', MULTIPLY));
-                    return
-                case '/':
-                    console.log('divide');
-                    dispatch(addOperator(currDisplay, '/', DIVIDE));
-                    return
-                case '%':
-                    console.log('mod');
-                    dispatch(addOperator(currDisplay, '%', MOD));
-                    return
-                case 'e':
-                    console.log('add');
-                    dispatch(addOperator(currDisplay, 'e', EXP));
-                    return
-            }
         }
         if (type === 'Command') {
             switch (btn) {
                 case 'Clear':
-                    console.log('Clearing screen');
                     return dispatch(clear_screen());
                 case 'del':
-                    console.log('delete last key pressed');
                     return dispatch(del(currDisplay));
                 case '=':
-                    console.log('equals pressed');
-                    return dispatch(equals(currDisplay));
+                    let newOperation = lastResult + currDisplay;
+                    return dispatch(equals(newOperation));
+            }
+        }
+        if (type === 'Action' && lastType !== type) {
+            switch (btn) {
+                case '+':
+                    dispatch(addOperator(currDisplay, '+', ADD, type));
+                    return
+                case '-':
+                    dispatch(addOperator(currDisplay, '-', SUBTRACT, type));
+                    return
+                case 'x':
+                    dispatch(addOperator(currDisplay, '*', MULTIPLY, type));
+                    return
+                case '/':
+                    dispatch(addOperator(currDisplay, '/', DIVIDE, type));
+                    return
+                case '%':
+                    dispatch(addOperator(currDisplay, '%', MOD, type));
+                    return
+                case 'e':
+                    dispatch(addOperator(currDisplay, 'e', EXP, type));
+                    return
             }
         }
     }
     return (
         <button
-            onClick={() => handleBtnClick(btn, type)}
+            onClick={() => handleBtnClick(btn, type, lastType)}
             className={`btn ${operatorStyle ? 'btn--operator' : 'btn--number'}`}>
             {btn}
         </button >

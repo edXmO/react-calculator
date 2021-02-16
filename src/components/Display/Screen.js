@@ -9,7 +9,6 @@ const Screen = () => {
     const result = useSelector(({ calculator }) => calculator.result);
     const lastKeyPressed = useSelector(({ calculator }) => calculator.lastKey);
     const currNumberDisplayed = useSelector(({ calculator }) => calculator.screen);
-
     const dispatch = useDispatch();
 
     useEffect(() => {

@@ -59,9 +59,9 @@ export const equals = history => {
 
 // Operator action
 
-export const addOperator = (history, operator, type) => {
+export const addOperator = (history, operator, action, type) => {
     const result = history.concat(operator);
-    return { type: type, payload: result }
+    return { type: action, payload: { result, type } }
 }
 
 export const add = history => {
