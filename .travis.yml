@@ -8,7 +8,7 @@ cache:
     - public
     - .cache
 script:
-  - yarn build # Generate static HTML files
+  - npm build # Generate static HTML files
 
 # Here is the magic part
 deploy:
