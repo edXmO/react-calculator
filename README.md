@@ -19,9 +19,10 @@
 - Javascript (ES6)
 - React / Redux
 - Sass
+- Jest
 
 ## Todo's
 
-- Tests
+- Tests => In progress
 - Refactoring operation logic
 - Scientific calculator

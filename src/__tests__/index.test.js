@@ -1,4 +1,4 @@
-import { equals, addOperator, del, decimal, display_screen, lastKey_pressed } from '../index';
+import { equals, addOperator, del, decimal, display_screen, lastKey_pressed } from '../actions/index';
 
 // Testing every action
 
