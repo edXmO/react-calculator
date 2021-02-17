@@ -6,7 +6,7 @@ const SYMBOLS = [
     { 'key': '7', 'type': 'Display' },
     { 'key': '8', 'type': 'Display' },
     { 'key': '9', 'type': 'Display' },
-    { 'key': 'x', 'type': 'Action' },
+    { 'key': '*', 'type': 'Action' },
     { 'key': '4', 'type': 'Display' },
     { 'key': '5', 'type': 'Display' },
     { 'key': '6', 'type': 'Display' },
