@@ -8,6 +8,7 @@ cache:
     - public
     - .cache
 script:
+  - npm test 
   - npm build # Generate static HTML files
 
 # Here is the magic part
