@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render al components without crasing should render with given state from redux store 1`] = `
+<div
+  className="main-wrapper"
+>
+  <div
+    className="logo"
+  >
+    <h1
+      className="logo__name"
+    >
+      CASIO
+    </h1>
+    <p
+      className="logo__version"
+    >
+      fx-82MS
+    </p>
+  </div>
+  <div
+    className="screen"
+  >
+    <p
+      className="screen__currOperation"
+    >
+      12+
+    </p>
+    <p
+      className="screen__display"
+    >
+      0
+    </p>
+  </div>
+  <div
+    className="buttons"
+  >
+    <button
+      className="btn btn--operator"
+      onClick={[Function]}
+    >
+      +
+    </button>
+    <button
+      className="btn btn--operator"
+      onClick={[Function]}
+    >
+      -
+    </button>
+    <button
+      className="btn btn--operator"
+      onClick={[Function]}
+    >
+      /
+    </button>
+    <button
+      className="btn btn--operator"
+      onClick={[Function]}
+    >
+      Clear
+    </button>
+    <button
+      className="btn btn--number"
+      onClick={[Function]}
+    >
+      7
+    </button>
+    <button
+      className="btn btn--number"
+      onClick={[Function]}
+    >
+      8
+    </button>
+    <button
+      className="btn btn--number"
+      onClick={[Function]}
+    >
+      9
+    </button>
+    <button
+      className="btn btn--operator"
+      onClick={[Function]}
+    >
+      *
+    </button>
+    <button
+      className="btn btn--number"
+      onClick={[Function]}
+    >
+      4
+    </button>
+    <button
+      className="btn btn--number"
+      onClick={[Function]}
+    >
+      5
+    </button>
+    <button
+      className="btn btn--number"
+      onClick={[Function]}
+    >
+      6
+    </button>
+    <button
+      className="btn btn--operator"
+      onClick={[Function]}
+    >
+      e
+    </button>
+    <button
+      className="btn btn--number"
+      onClick={[Function]}
+    >
+      1
+    </button>
+    <button
+      className="btn btn--number"
+      onClick={[Function]}
+    >
+      2
+    </button>
+    <button
+      className="btn btn--number"
+      onClick={[Function]}
+    >
+      3
+    </button>
+    <button
+      className="btn btn--operator"
+      onClick={[Function]}
+    >
+      %
+    </button>
+    <button
+      className="btn btn--number"
+      onClick={[Function]}
+    >
+      0
+    </button>
+    <button
+      className="btn btn--number"
+      onClick={[Function]}
+    >
+      .
+    </button>
+    <button
+      className="btn btn--operator"
+      onClick={[Function]}
+    >
+      del
+    </button>
+    <button
+      className="btn btn--operator"
+      onClick={[Function]}
+    >
+      =
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Button component should render without crashing should render with given state from redux store 1`] = `
+<button
+  className="btn btn--operator"
+  onClick={[Function]}
+>
+  8
+</button>
+`;
+
+exports[`Buttons component should render without crashing should render with given state from redux store 1`] = `
+<div
+  className="buttons"
+>
+  <button
+    className="btn btn--operator"
+    onClick={[Function]}
+  >
+    +
+  </button>
+  <button
+    className="btn btn--operator"
+    onClick={[Function]}
+  >
+    -
+  </button>
+  <button
+    className="btn btn--operator"
+    onClick={[Function]}
+  >
+    /
+  </button>
+  <button
+    className="btn btn--operator"
+    onClick={[Function]}
+  >
+    Clear
+  </button>
+  <button
+    className="btn btn--number"
+    onClick={[Function]}
+  >
+    7
+  </button>
+  <button
+    className="btn btn--number"
+    onClick={[Function]}
+  >
+    8
+  </button>
+  <button
+    className="btn btn--number"
+    onClick={[Function]}
+  >
+    9
+  </button>
+  <button
+    className="btn btn--operator"
+    onClick={[Function]}
+  >
+    *
+  </button>
+  <button
+    className="btn btn--number"
+    onClick={[Function]}
+  >
+    4
+  </button>
+  <button
+    className="btn btn--number"
+    onClick={[Function]}
+  >
+    5
+  </button>
+  <button
+    className="btn btn--number"
+    onClick={[Function]}
+  >
+    6
+  </button>
+  <button
+    className="btn btn--operator"
+    onClick={[Function]}
+  >
+    e
+  </button>
+  <button
+    className="btn btn--number"
+    onClick={[Function]}
+  >
+    1
+  </button>
+  <button
+    className="btn btn--number"
+    onClick={[Function]}
+  >
+    2
+  </button>
+  <button
+    className="btn btn--number"
+    onClick={[Function]}
+  >
+    3
+  </button>
+  <button
+    className="btn btn--operator"
+    onClick={[Function]}
+  >
+    %
+  </button>
+  <button
+    className="btn btn--number"
+    onClick={[Function]}
+  >
+    0
+  </button>
+  <button
+    className="btn btn--number"
+    onClick={[Function]}
+  >
+    .
+  </button>
+  <button
+    className="btn btn--operator"
+    onClick={[Function]}
+  >
+    del
+  </button>
+  <button
+    className="btn btn--operator"
+    onClick={[Function]}
+  >
+    =
+  </button>
+</div>
+`;
+
+exports[`Screen component should render without crashing should render with given state from redux store 1`] = `
+<div
+  className="screen"
+>
+  <p
+    className="screen__currOperation"
+  >
+    12+
+  </p>
+  <p
+    className="screen__display"
+  >
+    0
+  </p>
+</div>
+`;

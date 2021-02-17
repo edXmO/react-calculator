@@ -15,6 +15,7 @@
     "web-vitals": "^1.1.0"
   },
   "scripts": {
+    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
@@ -43,8 +44,11 @@
     ]
   },
   "devDependencies": {
+    "coveralls": "^3.1.0",
     "gh-pages": "^3.1.0",
     "node-sass": "^5.0.0",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "react-test-renderer": "^17.0.1",
+    "redux-mock-store": "^1.5.4"
   }
 }
