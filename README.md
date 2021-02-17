@@ -3,7 +3,7 @@
 # React - Redux Calculator 
 
 
-## [Live Demo](https://edxmo.github.io/react-calculator/index.html)
+## [Live Demo](https://edxmo.github.io/react-calculator/)
 
 
 [![Build Status](https://travis-ci.com/edXmO/react-calculator.svg?branch=main)](https://travis-ci.com/edXmO/react-calculator)
