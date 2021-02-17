@@ -1,10 +1,5 @@
 import {
-    ADD,
-    SUBTRACT,
-    MULTIPLY,
-    DIVIDE,
-    EXP,
-    MOD,
+    OPERATOR,
     CLEAR_SCREEN,
     DELETE,
     DECIMAL,
@@ -30,11 +25,11 @@ export const del = currentDisplay => {
     }
 }
 
-export const decimal = currentDisplay => {
+export const decimal = (currentDisplay, type) => {
     const updatedDisplay = currentDisplay + '.';
     return {
         type: DECIMAL,
-        payload: updatedDisplay
+        payload: { updatedDisplay, type }
     }
 }
 
@@ -63,54 +58,7 @@ export const equals = history => {
 }
 
 // Operator action
-
-export const addOperator = (history, operator, action, type) => {
+export const addOperator = (history, operator, type) => {
     const result = history.concat(operator);
-    return { type: action, payload: { result, type } }
-}
-
-export const add = history => {
-    const result = history.concat('+');
-    return {
-        type: ADD,
-        payload: result
-    }
-}
-
-export const subtract = history => {
-    const result = history.concat('-');
-    return {
-        type: SUBTRACT,
-        payload: result
-    }
-}
-
-export const multiply = history => {
-    const result = history.concat('*');
-    return {
-        type: MULTIPLY,
-        payload: result
-    }
-}
-
-export const divide = history => {
-    const result = history.concat('/');
-    return {
-        type: DIVIDE,
-        payload: result
-    }
-}
-
-export const exponential = num => {
-    return {
-        type: EXP,
-        payload: num
-    }
-}
-
-export const mod = num => {
-    return {
-        type: MOD,
-        payload: num
-    }
+    return { type: OPERATOR, payload: { result, type } }
 }

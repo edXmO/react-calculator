@@ -1,11 +1,10 @@
 import React from 'react';
 // Styles
 import '../../../styles/App.css';
+// redux
 import { useDispatch, useSelector } from 'react-redux';
 // Actions
 import { clear_screen, del, lastKey_pressed, decimal, equals, addOperator } from '../../../actions';
-// Types
-import { ADD, SUBTRACT, DIVIDE, MULTIPLY, MOD, EXP } from '../../../actions/types';
 
 const Button = ({ type, btn, operatorStyle }) => {
 
@@ -19,10 +18,11 @@ const Button = ({ type, btn, operatorStyle }) => {
         if (type === 'Display') {
             if (btn === '.') {
                 if (currDisplay.includes('.') || currDisplay[-1] === '.') return;
-                return dispatch(decimal(currDisplay));
+                return dispatch(decimal(currDisplay, type));
             }
             return dispatch(lastKey_pressed(keyHistory, btn, type));
         }
+
         if (type === 'Command') {
             switch (btn) {
                 case 'Clear':
@@ -34,29 +34,12 @@ const Button = ({ type, btn, operatorStyle }) => {
                     return dispatch(equals(newOperation));
             }
         }
+
         if (type === 'Action' && lastType !== 'Action') {
-            switch (btn) {
-                case '+':
-                    dispatch(addOperator(currDisplay, '+', ADD, type));
-                    return
-                case '-':
-                    dispatch(addOperator(currDisplay, '-', SUBTRACT, type));
-                    return
-                case 'x':
-                    dispatch(addOperator(currDisplay, '*', MULTIPLY, type));
-                    return
-                case '/':
-                    dispatch(addOperator(currDisplay, '/', DIVIDE, type));
-                    return
-                case '%':
-                    dispatch(addOperator(currDisplay, '%', MOD, type));
-                    return
-                case 'e':
-                    dispatch(addOperator(currDisplay, 'e', EXP, type));
-                    return
-            }
+            return dispatch(addOperator(currDisplay, btn, type));
         }
     }
+
     return (
         <button
             onClick={() => handleBtnClick(btn, type, lastType)}
