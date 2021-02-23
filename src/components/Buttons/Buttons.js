@@ -15,6 +15,9 @@ const Buttons = ({ symbols }) => {
         if (type === 'Display') {
             return <Button key={key} btn={key} type={type} />
         }
+        else {
+            return;
+        }
     })
 
     return (

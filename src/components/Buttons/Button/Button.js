@@ -32,6 +32,8 @@ const Button = ({ type, btn, operatorStyle }) => {
                 case '=':
                     const newOperation = lastResult + currDisplay;
                     return dispatch(equals(newOperation));
+                default:
+                    return;
             }
         }
 
