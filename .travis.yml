@@ -9,8 +9,9 @@ cache:
     - .cache
 script:
   - npm run build # Generate static HTML files
-
 # Here is the magic part
+env: 
+  CI: false
 deploy:
   # Use Github pages deploy process
   provider: pages
